@@ -359,11 +359,11 @@ class Tensor(Value):
     def transpose(self, axes=None):
         return needle.ops.Transpose(axes)(self)
 
+
+
+
     __radd__ = __add__
     __rmul__ = __mul__
-    __rsub__ = __sub__
-    __rmatmul__ = __matmul__
-
 
 def compute_gradient_of_variables(output_tensor, out_grad):
     """Take gradient of output node with respect to each node in node_list.
