@@ -40,6 +40,7 @@ class MultiHeadAttention(Module):
     def create_causal_mask(self, i, j, device):
         """
         return a triangular causal mask.
+        Input: i, j: the shape of the mask to be created
         """
         mask = -np.finfo(np.float32).max * np.triu(
             np.ones((1, 1, i, j), dtype=np.float32), j - i + 1)
